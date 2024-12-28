@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enas Portfolio</title>
+    <script src="https://kit.fontawesome.com/0f3e00b58c.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 600vh;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-image: URL('https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=600'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #0e1011;
+        }
+
+        .Home {
+            flex-grow: 1; /* allows the content to fill the available space */
+        }
+
+        .Footer {
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px 0;
+            margin-top: auto; /* pushes the footer to the bottom */
+            bottom: 0;
+            width: 100%;
+            
+        }
+
+        .Home {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(204, 169, 197, 0.26);
+        }
+
+        .Header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: black;
+        }
+
+        .Header div {
+            font-size: 16px;
+            font-weight: 800;
+            color: black;
+        }
+
+        .Header div:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .MyPhoto {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .MyPhoto img {
+            border-radius: 2px;
+            width: 50%;
+            max-width: 414px;
+        }
+
+        .HiIAmEnas {
+            font-size: 48px;
+            text-align: center;
+            color: black;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .AboutMe {
+            color: black;
+            text-align: center;
+            font-size: 16px;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: opacity 1s ease-in; 
+            background-color: azure;
+        }
+
+        .AboutMe.visible {
+            opacity: 1;
+        }
+
+        .Experience, .Portfolio {
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+        }
+
+        .Experience.visible, .Portfolio.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .Experience .card, .Portfolio .card {
+            margin-bottom: 20px;
+            background-color: #ad7e85;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #navbar a.active {
+            background-color: rgb(2, 2, 15);
+            color: white;
+        }
+        .Experience.visible, .Portfolio.visible {
+            opacity: 1;
+            transform: translateY(0);}
+         
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .Header {
+                flex-direction: column;
+            }
+
+            .MyPhoto img {
+                width: 70%;
+            }
+
+            .HiIAmEnas {
+                font-size: 36px;
+            }
+
+            .Experience .card, .Portfolio .card {
+                width: 100%;
+                margin-bottom: 30px;
+                background-color: antiquewhite;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               
+              
+            }
+        
+               
+        }
+
+        @media (max-width: 576px) {
+            .HiIAmEnas {
+                font-size: 30px;
+            }
+
+            .AboutMe {
+                font-size: 14px;
+            }
+
+            .cv-link {
+                font-size: small;
+                padding: 15px;
+                margin-left: 0;
+            }
+
+            .social-icons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            /* Social Media Section */
+        .social-media {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-media a {
+            color: #0e1011;
+            font-size: 2rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #0056b3;
+        }
+
+        /* Contact Form Styling */
+        .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #080e15;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #010912;
+        }
+        }
+        .contact-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it takes up full width on smaller screens */
+    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto; /* Center the form */
+}
+
+.contact-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #030a13;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%; /* Full width for button on mobile */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+   
+    .contact-form textarea {
+        font-size: 0.9rem; /* Smaller font size for inputs on mobile */
+    }
+
+    .contact-form button {
+        font-size: 1rem; /* Slightly smaller font size for button */
+        padding: 12px; /* Add more padding for better touch on mobile */
+    }
+    
+    @media (max-width: 200px) {
+    .Footer {
+        padding: 10px;
+    }
+
+    .Footer h2 {
+        font-size: 1rem; /* Smaller title size */
+    }
+
+    .Footer p {
+        font-size: 0.8rem; /* Smaller text */
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem; /* Smaller social icon size */
+        margin: 5px 0; /* Adjust margin */
+    }
+}
+@media (max-width: 1024px) {
+    .experience-section {
+        padding: 15px;
+    }
+
+    .experience-item {
+        padding: 12px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .experience-item p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Further adjustment for smaller mobile devices */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 10px;
+    }
+
+    .experience-item {
+        padding: 10px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .experience-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extreme small screen adjustments */
+@media (max-width: 480px) {
+    .experience-section {
+        padding: 5px;
+    }
+
+    .experience-item {
+        padding: 8px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-item p {
+        font-size: 0.85rem;
+    }
+}
+
+/* For very narrow screens (like below 200px, handling small devices) */
+@media (max-width: 200px) {
+    .experience-section {
+        padding: 2px;
+    }
+
+    .experience-item {
+        padding: 5px;
+    }
+
+    .experience-item h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .experience-item p {
+        font-size: 0.75rem;
+    }
+}
+
+
+}
+    </style>
+</head>
+<body>
+    <div data-layer="Home" class="Home">
+        <div data-layer="Header" class="Header">
+            <div><a href="#home">Home</a></div>
+            <div><a href="#about">About Me</a></div>
+            <div><a href="#portfolio">Portfolio</a></div>
+            <div><a href="#experience">Experience</a></div>
+            <div><a href="#skills">Skills</a></div>
+            <div><a href="#courses">Courses</a></div>
+            <div><a href="#contact">Download CV</a></div>
+        </div>
+
+        <div data-layer="My photo" class="MyPhoto">
+            <h1>Enas Abu Nassar</h1>
+            <img src="/enas photo.JPG" alt="Enas Abu Nassar, portfolio photo">
+            <p class="HiIAmEnas">HI, I AM ENAS</p>
+        </div>
+
+        <!-- About Me Section -->
+        <section id="about" class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>About Me</h2>
+                    <p>Here’s a little bit about who I am and what I do.</p>
+                </div>
+                <div class="col-12">
+                    <p class="AboutMe visible">
+                        I am a passionate graphic designer with experience in creating visual content for diverse marketing platforms. I specialize in logo design, branding, and digital graphics. I aim to help businesses communicate their message clearly through innovative and captivating visuals. I am always seeking new challenges and opportunities to grow professionally and creatively.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="container py-5 Experience">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>Experience</h2>
+                    <p>Explore my professional journey and the projects I have worked on!</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                    
+                        <div class="card-body">
+                            <h5 class="card-title">Graphic Designer – Tresco Company</h5>
+                            <p>September 2024</p>
+                            <ul>
+                                <li>Designed and created visually engaging content for marketing campaigns.</li>
+                                <li>Successfully targeted and secured over 20 clients in Qatar for graphic design services.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                   
+                        <div class="card-body">
+                            <h5 class="card-title">Intern – Ministry of Energy and Mineral Resources</h5>
+                            <p>2020</p>
+                            <ul>
+                                <li>Assisted in research and analysis related to the country's mining and mineral resources.</li>
+                                <li>Collaborated with senior engineers to propose improvements in resource extraction and sustainability practices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                       
+                        <div class="card-body">
+                            <h5 class="card-title">Freelance Graphic Design Projects</h5>
+                            <p>Ongoing</p>
+                            <ul>
+                                <li>Created brand identity packages, including logos and marketing materials for several small businesses.</li>
+                                <li>Worked with clients from various industries, delivering customized and visually appealing designs.</li>
+                                <li>Collaborated with clients to understand their needs and translate them into effective visual content.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="container py-5 Portfolio">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>My Portfolio</h2>
+                    <p>Explore some of my recent work and projects!</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="image/d93a73c9-73e2-4ade-91cb-b31abf6b9bb6.webp" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Logo Design</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="/image/OIP.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Figma</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="busine.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Card Design</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>Skills</h2>
+                    <p>Here are some of the key skills I have developed in my career.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">HTML</h5>
+                            <p>Proficient in HTML for structuring content and creating engaging websites.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">CSS</h5>
+                            <p>Experienced in CSS for styling and designing responsive, mobile-first web pages.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Figma</h5>
+                            <p>Skilled in using Figma for designing prototypes, UI/UX, and collaborative design projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2>Contact Me</h2>
+                <p>If you have any questions or want to get in touch with me, feel free to fill out the form below.</p>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                <form action="#" method="post" class="contact-form">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+    <footer class="Footer">
+        <section class="social-media">
+            <h2>Connect with Me</h2>
+            <p>Follow me on my social media platforms:</p>
+            <div>
+                <a href="https://www.linkedin.com/in/enas-fawwaz/" target="_blank" class="fab fa-linkedin"></a>
+                <a href="https://github.com/Eng-Enasfawwaz" target="_blank" class="fab fa-github"></a>
+                <a href="https://www.instagram.com/sakeena_with_enas/?hl=ar" target="_blank" class="fab fa-instagram"></a>
+            </div>
+        <p>© 2024 Enas Portfolio</p>
+    </footer>
+
+    <script>
+       
+        // JavaScript for adding animations
+        document.addEventListener("scroll", function () {
+            var aboutMe = document.querySelector('.AboutMe');
+            var experience = document.querySelector('.Experience');
+            var portfolio = document.querySelector('.Portfolio');
+
+            if (window.scrollY >= 100) {
+                aboutMe.classList.add('visible');
+            }
+
+            if (window.scrollY >= 300) {
+                experience.classList.add('visible');
+            }
+
+            if (window.scrollY >= 500) {
+                portfolio.classList.add('visible');
+            }
+        });
+    </script>
+</body>
+</html>

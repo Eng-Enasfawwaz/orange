@@ -1,346 +1,45 @@
-/* body{
-    background-color:  rgba(235, 229, 227, 0.899);
-}
-div{
-       background-color: blueviolet;
-       height: 100px;
-       width: 100px;
-       background-color: cadetblue;
-       translate:0 0;
-       rotate:90deg;
-       animation: box 2s 2s normal infinite ;
-      
-}
-    @keyframes box{
-0%{
-    background-color:rgb(232, 87, 26);
-    translate:0 0;
-    rotate:90deg;
-
-}
-
-    
-    25%{
-        background-color:yellow;
-        translate:0 400px;
-        rotate:180deg;
-
-
-    }
-    50%{
-        translate: 300px 400px;
-        background-color:rgb(132, 225, 206);
-        rotate:270deg;
-    }
-    75%{
-        translate: 300px 0;
-        background-color:rgb(72, 223, 80);
-        rotate:360deg;
-    }
-  100%{
-        translate: 0 0;
-        background-color: rgb(228, 9, 140);
-        rotate:90deg;
-    }
-    
-}
-div:hover
-{
-    animation-play-state: paused;
-     cursor:pointer
-} */
-/* 
-
-
-button{
-    background-color: blue;
-    padding: 10px 20px;
-    color: white;
-    margin:50px;
-    transition: transform 2s;
-    -webkit-transition: transform 2s;
-    -moz-transition: transform 2s;
-    -ms-transition: transform 2s;
-    -o-transition: transform 2s;
-}
-
-button:hover{
-    transform: scale(2); */
-
-
-
-
-
- /* ############          task1         ############
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    animation: colorChange 4s;
-}
-
-@keyframes colorChange {
-    100% {
-        background-color: blue;
-    }
-} */
- /* #############     task2     ############ */
-        /* body {
-            font-family: Arial, sans-serif;
-            margin: 10px;
-            padding: 0%;
-        }
-
-        .container {
-            display: flex;
-            gap: 10px; 
-        }
-
-        .box-container {
-            width: 140px;
-            height: 140px;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-        
-        }
-
-        .box-container:hover {
-            background-color: #e0e0e0; 
-        }
-
-        .box1 {
-            width: 100px;
-            height: 100px;
-            background-color: green;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            transform: rotate(15deg);
-            border-radius: 8px;   
-}
-.box2 {
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    transform: rotate(45deg);
-    border-radius: 8px;
-    
-} */
-
-        
-/* ############### task 3####################     */
-/* .box {
-    width: 100px;
-    height: 100px;
-    animation: multiColor 4s ;
-    background-color: orange;
-    animation-fill-mode: backwards;
-    transition: linear;
-}
-
-@keyframes multiColor {
-    0% { background-color:orange; }
-    25% { background-color: rgb(205, 18, 18); }
-    50% { background-color: #00ff04; }
-    75% { background-color: #e5ff00; }
-    100%{background-color: hsl(230, 99%, 53%);}
-}
- */
-/* ################          task4         ############# */
-/* 
-.cloud {
-    width: 100px;
-    height: 50px;
-    position: relative;
-    animation: moveCloud 4s  linear;
-   
-}
-
-@keyframes moveCloud {
-    0% { left: 0; }
-    100% { left: 800px; }
-} */
-/* 
-##################    task5      ###################### */
-
-/* body{
-   margin: 20px;
-   padding: 10px;
-}
-.opicty-image{
-position: relative;
-z-index: -1;
-opacity: 55%;
-background-color: rgb(73, 137, 192);
-width: 400px;
-
-}
-.image {
-    width: 400px;
-    position: absolute;
-    transform: rotate(-20deg);
-    -webkit-transform: rotate(-20deg);
-    
-} */
-
-
-/* #######################task6 */
-/* . {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    transform-origin: bottom right;
-    animation: scaleEffect 3s infinite;
-}
-
-@keyframes scaleEffect {
-    50% { transform: scale(1.5); }
-}
- */
-
-
-
-/* 
-###########      task7           ############# */
-/* body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-}
-.button {
-    padding: 10px 20px;
-    background-color: lightblue;
-    transition: transform 0.3s;
-
-   
-}
-
-.button:hover {
-    transform: scale(1.2);
-} */
-
-
-/* ###########      task8          #############  */
-
-/* .box {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    animation: multiStep 5s ;
-    -webkit-animation: multiStep 5s backwards ;
-}
-
-@keyframes multiStep {
-    0% { background-color: red; left: 0px; top: 0px; }
-    25% { background-color: yellow; left: 200px; top: 0px; }
-    50% { background-color: blue; left: 200px; top: 200px; }
-    75% { background-color: green; left: 0px; top: 200px; }
-    100% { background-color: red; left: 0px; top: 0px; }
-} */
-
-
-/* ###########      task9          #############  */
-/* body {
+body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
+header {
     text-align: center;
     padding: 20px;
+    background-color: #f4f4f4;
 }
 
-.card h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+header img {
+    width: 150px;
+    border-radius: 50%;
 }
 
-.card p {
-    color: #555;
-    margin: 5px 0 15px;
-}
-
-.price {
-    font-size: 2em;
-    color: #000;
-    background-color: #e0f4ff;
-    padding: 10px;
+header h1 {
     margin: 10px 0;
-    border-radius: 4px;
 }
 
-.features {
-    text-align: left;
-    margin: 15px 0;
-    list-style: none;
-    padding: 0;
-}
-
-.features li {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    color: #555;
-}
-
-.features li::before {
-    content: "✔";
-    margin-right: 10px;
-    color: green;
-}
-
-.join-now {
+header .btn {
     display: inline-block;
-    margin-top: 15px;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-.join-now:hover {
-    background-color: #0056b3;
-
-} */
-
-/* ###########      task10         #############  */
-/* .reload { 
-    width: 100px; 
-    height: 50px;
-    background-color: red;
-    animation: reloadEffect 3s forwards; 
+section {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-@keyframes reloadEffect {
-0%{ background-color: rgb(229, 13, 13); }
-25%{ background-color:greenyellow;}
-75%{ background-color:rgb(23, 125, 23);}
-100%{ background-color:rgb(5, 90, 5);}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
 
- } */
-    
+footer p {
+    margin: 5px 0;
+}
