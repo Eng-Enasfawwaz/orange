@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre&display=swap");
+
+body {
+  font-family: "Edu AU VIC WA NT Pre", sans-serif;
+  margin: 0;
+  padding-bottom: 0%;
+  background-color: antiquewhite;
+  color: rgb(253, 253, 253);
+}
+
+h1 {
+  background-color: rgb(43, 20, 3);
+  text-align: center;
+}
+
+nav {
+  background-color: #5c4033;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav a {
+  color: rgba(222, 199, 141, 0.877);
+  text-decoration: none;
+  margin: 1%;
+  font-weight: bold;
+}
+
+h3 {
+  color: rgb(244, 231, 215);
+  text-align: center;
+}
+
+.fpara {
+  font-weight: bolder;
+  background-attachment: fixed;
+  margin: 10;
+  padding: 10;
+  border: 2px solid;
+  border-radius: 10px;
+  background-size: 100%;
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  position: sticky;
+  background-image: url(images/chocolate-cake-2500-56a211085f9b58b7d0c6344e.jpg);
+}
+
+.list {
+  margin-right: auto;
+  padding-left: 50px;
+  border: 20px;
+  color: #361404;
+}
+
+.hover-effect:hover {
+  background-color: rgb(255, 251, 0);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.hover-effects:hover {
+  background-color: #c0f852;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+h4 {
+  padding-left: 20px;
+  margin: 50;
+  padding: 10;
+  color: rgb(48, 8, 8);
+}
+
+ol {
+  color: #5c4033;
+}
+
+.resources {
+  font-weight: bolder;
+  background-attachment: fixed;
+  margin: 10;
+  padding: 10;
+  border: 2px solid;
+  background-size: 100%;
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-image: url(ai-generated-8613879_1280.webp);
+  background-attachment: fixed;
+}
+
+h6 {
+  background-color: rgb(43, 20, 3);
+  text-align: center;
+}
